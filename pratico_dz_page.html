@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pratico DZ — Tasse télescopique</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f6f6f6;color:#222}
+.container{max-width:700px;margin:auto;padding:18px}
+header{text-align:center;padding:22px 10px;background:white}
+.logo{font-size:30px;font-weight:800;letter-spacing:1px}
+.slogan{color:#666;margin-top:8px}
+.hero{background:white;margin-top:14px;border-radius:16px;padding:20px;text-align:center}
+.photo{height:280px;border:2px dashed #bbb;border-radius:14px;display:flex;align-items:center;justify-content:center;color:#777;background:#fafafa}
+h1{font-size:28px;margin:20px 0 8px}
+.subtitle{font-size:17px;color:#555}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.price{padding:15px 8px;border:1px solid #ddd;border-radius:12px;background:#fff}
+.price strong{display:block;font-size:21px;margin-top:5px}
+.pack{padding:16px;border-radius:12px;background:#fff3d6;font-weight:700;margin:12px 0 20px}
+.btn{display:block;background:#111;color:white;text-decoration:none;padding:16px;border-radius:12px;font-weight:700;font-size:18px}
+.card{background:white;margin-top:14px;border-radius:16px;padding:20px}
+ul{padding-left:22px;line-height:1.9}
+label{display:block;font-weight:700;margin-top:13px}
+input,select,textarea{width:100%;padding:13px;margin-top:6px;border:1px solid #ccc;border-radius:9px;font-size:16px}
+.submit{width:100%;border:0;background:#111;color:white;padding:15px;border-radius:10px;margin-top:18px;font-size:17px;font-weight:700}
+.note{text-align:center;color:#666;font-size:14px;margin-top:15px}
+@media(max-width:480px){.prices{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">PRATICO DZ</div>
+  <div class="slogan">Des produits malins pour simplifier votre quotidien.</div>
+</header>
+
+<main class="container">
+<section class="hero">
+  <div class="photo">📷<br><br>Photo du produit à ajouter</div>
+  <h1>Tasse télescopique</h1>
+  <div class="subtitle">Compacte • Pratique • Facile à transporter</div>
+
+  <div class="prices">
+    <div class="price">Petit<strong>350 DA</strong></div>
+    <div class="price">Moyen<strong>400 DA</strong></div>
+    <div class="price">Grand<strong>450 DA</strong></div>
+  </div>
+
+  <div class="pack">🎁 Pack des 3 tailles : 1 200 DA</div>
+  <a class="btn" href="#commande">🛒 COMMANDER MAINTENANT</a>
+</section>
+
+<section class="card">
+  <h2>Pourquoi choisir notre tasse ?</h2>
+  <ul>
+    <li>Compacte et facile à ranger</li>
+    <li>Facile à transporter</li>
+    <li>Pratique au quotidien</li>
+    <li>Idéale pour la voiture, le travail et les voyages</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>🚚 Livraison</h2>
+  <p>Livraison à domicile avec <strong>ZR Express</strong>.</p>
+  <p><strong>Paiement à la livraison.</strong></p>
+  <p>Les frais de livraison sont à la charge du client.</p>
+</section>
+
+<section class="card" id="commande">
+  <h2>📝 Commander</h2>
+  <form onsubmit="return submitOrder()">
+    <label>Nom et prénom</label>
+    <input id="nom" required>
+    <label>Numéro de téléphone</label>
+    <input id="tel" type="tel" required>
+    <label>Wilaya</label>
+    <input id="wilaya" required>
+    <label>Commune</label>
+    <input id="commune" required>
+    <label>Adresse</label>
+    <textarea id="adresse" rows="3" required></textarea>
+    <label>Modèle</label>
+    <select id="modele">
+      <option>Petit — 350 DA</option>
+      <option>Moyen — 400 DA</option>
+      <option>Grand — 450 DA</option>
+      <option>Pack 3 tailles — 1 200 DA</option>
+    </select>
+    <label>Quantité</label>
+    <input id="qte" type="number" min="1" value="1" required>
+    <button class="submit" type="submit">CONFIRMER MA COMMANDE</button>
+  </form>
+  <div class="note">Nous vous contacterons pour confirmer la commande.</div>
+</section>
+</main>
+
+<script>
+function submitOrder(){
+  const nom=document.getElementById('nom').value;
+  const tel=document.getElementById('tel').value;
+  const wilaya=document.getElementById('wilaya').value;
+  const commune=document.getElementById('commune').value;
+  const adresse=document.getElementById('adresse').value;
+  const modele=document.getElementById('modele').value;
+  const qte=document.getElementById('qte').value;
+  const text=`Bonjour Pratico DZ, je souhaite commander :%0A%0ANom : ${nom}%0ATéléphone : ${tel}%0AWilaya : ${wilaya}%0ACommune : ${commune}%0AAdresse : ${adresse}%0AModèle : ${modele}%0AQuantité : ${qte}`;
+  alert("Formulaire prêt. Dans la prochaine étape, nous relierons ce bouton à WhatsApp ou à un vrai système de réception des commandes.");
+  return false;
+}
+</script>
+</body>
+</html>
